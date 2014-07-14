@@ -47,6 +47,7 @@ function check-distro () {
 
 function create-sysctl () {
     announce "Creating sysctl entry in $SYSCTL_CONF"
+    mkdir -p $SYSCTL_DIR
     cat > $SYSCTL_CONF <<EOF
 # On Hardware Node we generally need
 # packet forwarding enabled and proxy arp disabled
