@@ -114,8 +114,13 @@ enjoy!
 EOF
 }
 
+function update-kernel-firmware () {
+    rpm -Uvh http://mirror.anl.gov/pub/centos/6.5/centosplus/x86_64/Packages/kernel-firmware-2.6.32-431.20.3.el6.centos.plus.noarch.rpm
+}
+
 check-distro &&
     import-rpm-gpg-key &&
+    update-kernel-firmware &&
     install-openvz &&
     create-sysctl &&
     disable-selinux &&
